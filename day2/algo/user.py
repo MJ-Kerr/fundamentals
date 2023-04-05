@@ -1,14 +1,19 @@
 class User:
-    def __init__(self):
-        self.first_name = "Miles"
-        self.last_name = "Kerr"
-        self.email = "milesjkerr@gmail.com"
-        self.age = 38
-        self.is_rewards_member = False
-        self.gold_card_points = 0
+    def init(self, name, email, member_status=False, gold_card_points=0):
+        self.name = name
+        self.email = email
+        self.member_status = member_status
+        self.gold_card_points = gold_card_points
 
-print('hello world')
+    def display_info(self):
+        print("Name:", self.name)
+        print("Email:", self.email)
+        print("Member Status:", self.member_status)
+        print("Gold Card Points:", self.gold_card_points)
 
-user_miles = User()
+    def enroll(self):
+        self.member_status = True
+        self.gold_card_points = 200
 
-print(user_miles.first_name)
+    def spend_points(self, amount):
+        self.gold_card_points -= amount
